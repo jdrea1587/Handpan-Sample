@@ -12,6 +12,7 @@
 ***
 ***Get Started***
 * Trello Flow
+https://trello.com/b/MqXxG4DM/project-management
 * Record Scale
   * Determine how to load sound clips
 * Psuedo-code
@@ -20,7 +21,7 @@
   * javascript
 * Update Trello
 * Build Out Website
-  *consider css for phone sized app
+  * consider css for phone sized app
 ***
 ***Screenshots***
 
