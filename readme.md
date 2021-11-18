@@ -7,7 +7,7 @@
 ##### [Github](https://github.com/jdrea1587) | [LinkedIn](https://www.linkedin.com/in/joshua-rea-178a1722/)
 ***
 ***Description***
-##### Ever wanted to test out a handpan and see if the scale is for you? This app allows you to test a scale and play around a little. For this project the only scale will be the kurd 9: 
+##### Ever wanted to test out a handpan and see if the scale is for you? This app allows you to test a scale, play around a little as well as play a game that tests your memory like 'simon says'. For this project the only scale will be the kurd 9: 
 (D) A, Bb, C, D, E, F, G, A, C
 ***
 ***Get Started***
