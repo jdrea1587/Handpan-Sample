@@ -230,9 +230,11 @@ const showMelody = (e) => {
 const countMelody = () => {
 
 }
-//prompt user to begin, check user input against new melody ===
-//if true create new melody, if false repeat
 
+// convert user input into a number and push into new array
+
+
+//check newMelody against userInput
 
 
 //
