@@ -22,44 +22,50 @@ const selectPanNote8 = new Audio('./mp3/panNoteAa.mp3')
 
 //Play sound
 const playDing = () => {
-    selectDing.currentTime = 0; //play same note repetitively!
-
+    selectDing.currentTime = 0;
     clickDing.style.fill = "blue"
-    console.log("color")
-
     selectDing.play()
-    console.log("did 3e gert here?")
-    
-
     }
 const playNote1 = () => {
+    selectPanNote1.currentTime = 0;
+    clickNote1.style.fill = "blue"
     selectPanNote1.play();
     }   
 const playNote2 = () => { 
+    selectPanNote2.currentTime = 0;
+    clickNote2.style.fill = "blue"
     selectPanNote2.play();
 }  
 const playNote3 = () => {
+    selectPanNote3.currentTime = 0;
+    clickNote3.style.fill = "blue"
     selectPanNote3.play();
 } 
 const playNote4 = () => {
+    selectPanNote4.currentTime = 0;
+    clickNote4.style.fill = "blue"
     selectPanNote4.play();
 }  
 const playNote5 = () => {
+    selectPanNote5.currentTime = 0;
+    clickNote5.style.fill = "blue"
     selectPanNote5.play();
 }   
 const playNote6 = () => {
+    selectPanNote6.currentTime = 0;
+    clickNote6.style.fill = "blue"
     selectPanNote6.play();
 }   
 const playNote7 = () => {
+    selectPanNote7.currentTime = 0;
+    clickNote7.style.fill = "blue"
     selectPanNote7.play();
 } 
 const playNote8 = () => {
+    selectPanNote8.currentTime = 0;
+    clickNote8.style.fill = "blue"
     selectPanNote8.play();
 }    
-    
-
-
-
 //Click Event       
 clickDing.addEventListener("click", playDing)
 clickNote1.addEventListener("click", playNote1)
@@ -75,6 +81,46 @@ clickNote8.addEventListener("click", playNote8)
 selectDing.addEventListener("ended", function(){
     selectDing.currentTime = 0;
     clickDing.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote1.addEventListener("ended", function(){
+    selectPanNote1.currentTime = 0;
+    clickNote1.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote2.addEventListener("ended", function(){
+    selectPanNote2.currentTime = 0;
+    clickNote2.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote3.addEventListener("ended", function(){
+    selectPanNote3.currentTime = 0;
+    clickNote3.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote4.addEventListener("ended", function(){
+    selectPanNote4.currentTime = 0;
+    clickNote4.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote5.addEventListener("ended", function(){
+    selectPanNote5.currentTime = 0;
+    clickNote5.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote6.addEventListener("ended", function(){
+    selectPanNote6.currentTime = 0;
+    clickNote6.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote7.addEventListener("ended", function(){
+    selectPanNote7.currentTime = 0;
+    clickNote7.style.fill = "grey"
+    console.log("ended");
+});
+selectPanNote8.addEventListener("ended", function(){
+    selectPanNote8.currentTime = 0;
+    clickNote8.style.fill = "grey"
     console.log("ended");
 });
 
@@ -126,7 +172,4 @@ const melody = [
     playNote1,
     playNote4
 ]
-const playMelody = () => {
-    melody
-}
-playMelody()
+
