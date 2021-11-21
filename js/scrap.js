@@ -157,12 +157,84 @@ document.addEventListener("keypress", function onEvent(event) {
         playNote8();
         console.log('this will be A note panNote8')
     }
+    if (event.key === "p") {
+        randomMelody();
+        console.log('generate random melody')
+    }
 });
 
 
 
-// Start button plays a melody or enter
+// Game Start button plays a melody or any key 'keyup' event
+
 //if user plays same melody then is able to move to next melody
 //else if user does not perform melody than melody is repeated.
+
+//Create melody
+//create random number and push to new melody
+const randomMelody = () => {
+    let randomNumber = Math.floor(Math.random()*4)
+    newMelody.push(randomNumber) 
+    showMelody(newMelody[newMelody.length - 1])
+    //nextMelody()
+    userInput=[] 
+   };
+
+//show melody order
+const showMelody = (e) => {
+    switch (e) {
+        case 0:
+            playDing()
+            setTimeout(function() { console.log('playDing called') },250)
+            break;
+        case 1:
+            playNote1()
+            setTimeout(function() { console.log('playNote1 called') },250)
+            break;
+        case 2:
+            playNote2()
+            setTimeout(function() { console.log('playNote2 called') },250)
+            break;
+        case 3:
+            playNote3()
+            setTimeout(function() { console.log('playNote1 called') },250)
+            break; 
+        case 4:
+            playNote4()
+            setTimeout(function() { console.log('playNote1 called') },250)
+            break;
+        case 5:
+            playNote5()
+            setTimeout(function() { console.log('playNote1 called') },250)
+            break;
+        case 6:
+            playNote6()
+            setTimeout(function() { console.log('playNote1 called') },250)
+            break;
+        case 7:
+            playNote7()
+            setTimeout(function() { console.log('playNote1 called') },250)
+            break;
+        case 8:
+            playNote8()
+            setTimeout(function() { console.log('playNote1 called') },250)
+            break;
+    }
+}
+
+
+//call the sequence, set interval for each note
+
+
+//melodies correct
+const countMelody = () => {
+
+}
+//prompt user to begin, check user input against new melody ===
+//if true create new melody, if false repeat
+
+
+
+//
 
 

@@ -163,13 +163,4 @@ document.addEventListener("keypress", function onEvent(event) {
     }
 });
 
-
-
-
-const melody = [
-    playDing,
-    playNote1,
-    playNote1,
-    playNote4
-]
-
+//create "learn a molody" button to take user to new page.
