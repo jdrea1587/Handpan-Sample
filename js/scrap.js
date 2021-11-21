@@ -12,44 +12,44 @@ const clickNote7 = document.getElementById('panNote7')
 const clickNote8 = document.getElementById('panNote8')
 
 //Select audio file
-const playKurdDDing = new Audio('./mp3/kurdDDing.mp3')
-const playPanNote1 = new Audio('./mp3/panNoteA.mp3')
-const playPanNote2 = new Audio('.mp3/panNoteBb.mp3')
-const playPanNote3 = new Audio('./mp3/panNoteC.mp3')
-const playPanNote4 = new Audio('./mp3/panNoteD.mp3')
-const playPanNote5 = new Audio('./mp3/panNoteE.mp3')
-const playPanNote6 = new Audio('./mp3/panNoteF.mp3')
-const playPanNote7 = new Audio('./mp3/panNoteG.mp3')
-const playPanNote8 = new Audio('./mp3/panNoteAa.mp3')
+const selectDing = new Audio('./mp3/panDingD.mp3')
+const selectPanNote1 = new Audio('./mp3/panNoteA.mp3')
+const selectPanNote2 = new Audio('.mp3/panNoteB.mp3')
+const selectPanNote3 = new Audio('./mp3/panNoteC.mp3')
+const selectPanNote4 = new Audio('./mp3/panNoteD.mp3')
+const selectPanNote5 = new Audio('./mp3/panNoteE.mp3')
+const selectPanNote6 = new Audio('./mp3/panNoteF.mp3')
+const selectPanNote7 = new Audio('./mp3/panNoteG.mp3')
+const selectPanNote8 = new Audio('./mp3/panNoteAa.mp3')
 
 //Play sound
 const playDing = () => {
-    playKurdDDing.play(); 
+    selectDing.play(); 
     }
 const playNote1 = () => {
-    playPanNote1.play();
+    selectPanNote1.play();
     }   
 const playNote2 = () => {
-    playPanNote2.play();
+    selectPanNote2.play();
 }  
 const playNote3 = () => {
-    playPanNote3.play();
+    selectPanNote3.play();
 } 
 const playNote4 = () => {
-    playPanNote4.play();
+    selectPanNote4.play();
 }  
 const playNote5 = () => {
-    playPanNote5.play();
+    selectPanNote5.play();
 }   
 const playNote6 = () => {
-    playPanNote6.play();
+    selectPanNote6.play();
 }   
 const playNote7 = () => {
-    playPanNote7.play();
+    selectPanNote7.play();
 } 
 const playNote8 = () => {
-    playPanNote8.play();
-}    
+    selectPanNote8.play();
+}      
     
 //Click Event       
 clickDing.addEventListener("click", playDing)
@@ -99,23 +99,3 @@ document.addEventListener("keypress", function onEvent(event) {
         console.log('this will be A note panNote8')
     }
 });
-
-
-// //function play mp3 audio
-// const playDing = () => {
-//     const playkurdDDing = new Audio('./mp3/kurdDDing.mp3')
-//     playkurdDDing.play();
-//     console.log(playDing)
-//     console.log(playkurdDDing)  
-// }
-// //select g element and add click listener
-// const clickDing = document.getElementById('panNoteDing')
-// clickDing.addEventListener("click", playDing)
-// //console.log(clickDing)
-
-// //play audio with from html audio element: 
-// document.getElementById('myAudioTagID').play();
-
-// //play audio with out html audio tag
-// var myAudio = new Audio('my_great_song.mp3');
-// myAudio.play();

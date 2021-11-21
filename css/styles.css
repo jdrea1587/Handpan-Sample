@@ -1,0 +1,19 @@
+body {
+    background-color: darkslategray;
+    text-align:justify;
+    
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 45%;
+    max-height: 45%;   
+}
+
+
+
+g:hover, circle:hover, ellipse:hover {
+    fill: blue;
+  }
