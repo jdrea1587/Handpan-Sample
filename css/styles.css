@@ -12,6 +12,9 @@ section {
     max-height: 45%;   
 }
 
+g {
+    color: black;
+}
 
 
 g:hover, circle:hover, ellipse:hover {
