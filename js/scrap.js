@@ -172,10 +172,12 @@ let randomMelody = () => {
     newRandomMelody.push(randomNumber)
     
     playRandomMelody()
-    
+   
     //nextNote()
     //userInput=[] 
 };
+
+
 
 console.log(newRandomMelody)
 
@@ -184,7 +186,6 @@ const playRandomMelody = () => {
     for (let i = 0; i < newRandomMelody.length; i++) {
         // for each iteration
         // make a pause after it
-        //console.log('in playrandommelodyfunction', newRandomMelody)
         (function (i) {
             setTimeout(
                 function () {
@@ -286,74 +287,95 @@ let countMelody = () => {
 
 // convert user input into a number and push into new array
 document.addEventListener("keypress", function onEvent(event) {
-    let userKeyed = ['']
-    console.log('userKeyed:', userKeyed)
-    switch (userKeyed) {
+    let keyPressed = null
+    console.log('userKeyed:', keyPressed)
+    switch (keyPressed) {
         case "g":
         userInput.push(0)
         playNote(0)
+        keyPressed = 0
         break;
 
         case "b":
         userInput.push(1)
         playNote(1)
+        keyPressed = 1
         break;
 
         case "v":
         userInput.push(2)
         playNote(2)
+        keyPressed = 2
         break;
 
         case "n":
         userInput.push(3)
         playNote(3)
+        keyPressed = 3
         break;
 
         case "f":
         userInput.push(4)
         playNote(4)
+        keyPressed = 4
         break;
 
         case "h":
         userInput.push(5)
         playNote(5)
+        keyPressed = 5
         break;
 
         case "r":
         userInput.push(6)
         playNote(6)
+        keyPressed = 6
         break;
 
         case "y":
         userInput.push(7)
         playNote(7)
+        keyPressed = 7
         break;
 
         case "t":
         userInput.push(8)
         playNote(8)
+        keyPressed = 8
         break;
     }
-    melodyCheck(userInput.length-1)
+    melodyCheck(keyPressed)
 
 })
 
 
 
-//check newMelody against userInput
-const melodyCheck = (arrayIndex) => {
-    // if (userInput[arrayIndex] === newRandomMelody[arrayIndex]) {
-    //     if (newRandomMelody.length === userInput.length) {
-    //         setTimeout(function () {
-    //             randomMelody()
-    //         }, 750)
-    //     }
-    // } else {
-    //     tryAgain()
-    // }
+
+//this function will trigger every time a key is pressed
+// First check if !notesArray[arrayIndex] = newRandomMelod[currentNote]
+// Send an alert and reset game!
+
+//current index in newRandomMelody
+let currentNoteForRepeatBack = 0
+
+//newRandomMelody = [1, 4, 6, 7]
+
+const melodyCheck = (playedNote) => {
+    console.log('played note', playedNote)
+    if (playedNote !== newRandomMelody[currentNoteForRepeatBack]) {
+        tryAgain()
+    }
+    if (playedNote < newRandomMelody.length) {
+        playedNote++
+    } else {
+        currentNoteForRepeatBack = 0
+        //add a new note
+        //triggers press play
+    }     
 }
+
 
 //if userInput does not match newMelody array
 const tryAgain = () => { 
-    console.log('try again')
+    document.getElementsByClassName("simonSays").innerHTML = "Try Again? Press 'P'";
 }
