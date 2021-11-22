@@ -73,7 +73,7 @@ clickNote6.addEventListener("click", playNote6)
 clickNote7.addEventListener("click", playNote7)
 clickNote8.addEventListener("click", playNote8)
 
-//Reset fill color
+//Reset fill color after click or keypress listener
 notesArray[0].addEventListener("ended", function(){
     notesArray[0].currentTime = 0;
     clickDing.style.fill = "grey"
