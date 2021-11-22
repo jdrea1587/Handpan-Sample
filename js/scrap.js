@@ -174,10 +174,11 @@ document.addEventListener("keypress", function onEvent(event) {
 //create random number and push to new melody
 let randomMelody = () => {
     let randomNumber = Math.floor(Math.random()*9)
+    console.log(randomNumber)
     newRandomMelody.push(randomNumber)
     // newMelody[indexOfRandomNumber]    
     // let indexOfRandomNumber = newMelody.length - 1
-
+    
     // playMelody()
     playRandomMelody()
 
@@ -185,20 +186,21 @@ let randomMelody = () => {
     userInput=[] 
    };
 
-   function loopThroughSplittedText() {
-    
-}
+   console.log(newRandomMelody)
+
 
 const playRandomMelody = () => {
-    for (var i = 0; i < newRandomMelody.length; i++) {
-        // for each iteration console.log a word
-        // and make a pause after it
+    for (let i = 0; i < newRandomMelody.length; i++) {
+        // for each iteration
+        // make a pause after it
+        //console.log('in playrandommelodyfunction', newRandomMelody)
         (function (i) {
-            setTimeout(function () {
-                playNote(i)
-                console.log("did we get here?")
-            }, 1000 * i);
-        })(i);
+            setTimeout(
+                function () {
+                    playNote(newRandomMelody[i])
+                    console.log("did we get here?")
+                    }, 1000 * i);
+                    })(i);
     };
 }
 
@@ -211,39 +213,63 @@ const playNote = (e) => {
             setTimeout(
                 function() { 
                     console.log('playDing called') 
-                }, 1500)
+                    }, 1500)
             break;
         case 1:
             playNote1()
-            setTimeout(function() { console.log('playNote1 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote1 called') 
+                    },1500)
             break;
         case 2:
             playNote2()
-            setTimeout(function() { console.log('playNote2 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote2 called') 
+                    },1500)
             break;
         case 3:
             playNote3()
-            setTimeout(function() { console.log('playNote1 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote1 called') 
+                    },1500)
             break; 
         case 4:
             playNote4()
-            setTimeout(function() { console.log('playNote1 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote1 called') 
+                    },1500)
             break;
         case 5:
             playNote5()
-            setTimeout(function() { console.log('playNote1 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote1 called')
+                    },1500)
             break;
         case 6:
             playNote6()
-            setTimeout(function() { console.log('playNote1 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote1 called') 
+                    },1500)
             break;
         case 7:
             playNote7()
-            setTimeout(function() { console.log('playNote1 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote1 called') 
+                    },1500)
             break;
         case 8:
             playNote8()
-            setTimeout(function() { console.log('playNote1 called') },1500)
+            setTimeout(
+                function() { 
+                    console.log('playNote1 called') 
+                    },1500)
             break;
     }
 }
@@ -263,6 +289,7 @@ let nextNote = () => {
 // convert user input into a number and push into new array
 document.addEventListener("keypress", function onEvent(event) {
     let userKeyed = ['']
+    console.log('userKeyed:', userKeyed)
     switch (userKeyed) {
         case "g":
         userInput.push(0)
@@ -317,8 +344,8 @@ document.addEventListener("keypress", function onEvent(event) {
 
 //check newMelody against userInput
 const melodyCheck = (arrayIndex) => {
-    // if (userInput[arrayIndex] === newMelody[arrayIndex]) {
-    //     if (newMelody.length === userInput.length) {
+    // if (userInput[arrayIndex] === newRandomMelody[arrayIndex]) {
+    //     if (newRandomMelody.length === userInput.length) {
     //         setTimeout(function () {
     //             randomMelody()
     //         }, 750)
