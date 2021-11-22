@@ -6,8 +6,30 @@ body {
 nav{
     margin: 2px;
     padding: 2px;
-    display: inline;
+    display: flex;
     
+}
+
+ul{  
+    padding:0;  
+    background:darkslategray;  
+    font-family:Arial, sans serif;  
+    font-size:12px;  
+    text-transform:uppercase;
+}
+
+ul li{
+    display: inline-block;
+
+}
+
+
+a{  
+    display:flex;  
+    padding:10px;  
+    color:white;  
+    text-decoration:none;
+    align-self: flex-start;
 }
 
 h1 {
@@ -15,17 +37,19 @@ h1 {
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
     font-size:xx-large;
 }
 
-img {
+
+
+/* img {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 45%;
     max-height: 45%; 
-}
+} */
 
 section {
     display: flex;
@@ -43,6 +67,8 @@ g {
 g:hover, circle:hover, ellipse:hover {
     fill: blue;
   }
+
+a:visited {color: #060235}
 
 
   .melody {
@@ -74,6 +100,7 @@ g:hover, circle:hover, ellipse:hover {
  .melody:hover {
     border: solid #337FED 1px;
     background: #1E62D0;
+    color: black;
     background-image: -webkit-linear-gradient(top, rgb(47, 79, 79), #3d43f6);
     background-image: -moz-linear-gradient(top, rgb(47, 79, 79), #3d43f6);
     background-image: -ms-linear-gradient(top, rgb(47, 79, 79), #3d43f6);

@@ -164,14 +164,6 @@ document.addEventListener("keypress", function onEvent(event) {
 });
 
 
-
-
-//if user plays same melody then is able to move to next melody
-
-//check to see if user plays
-
-//else if user does not perform melody than melody is repeated.
-
 //Create melody
 //create random number and push to new melody
 let randomMelody = () => {
@@ -180,12 +172,12 @@ let randomMelody = () => {
     newRandomMelody.push(randomNumber)
     
     playRandomMelody()
-
-    nextNote()
+    
+    //nextNote()
     //userInput=[] 
-   };
+};
 
-   console.log(newRandomMelody)
+console.log(newRandomMelody)
 
 
 const playRandomMelody = () => {
@@ -198,10 +190,17 @@ const playRandomMelody = () => {
                 function () {
                     playNote(newRandomMelody[i])
                     console.log("did we get here?")
-                    }, 1000 * i);
-                    })(i);
-    };
-}
+                }, 1000 * i);
+            })(i);
+        };
+    }
+    
+
+    //if user plays same melody then is able to move to next melody
+    
+    //check to see if user plays
+    
+    //else if user does not perform melody than melody is repeated.
 
 
 //show melody order

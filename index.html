@@ -6,23 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <link rel="icon" href="./images/handpan fit clear background.png">
-    <title>Handpan Sample</title>
+    <title>Pan Play Main Page</title>
 </head>
 <body>
     <nav>
-        <h3>Ayasa D Kurd</h3>
-        <img src="./images/handpan fit clear background.png" alt="Ayasa Handpan Kurd9" style="width:5%;height:5%;">
+        <ul>
+            <li>
+                <a href="scrap.html">
+                    <img src="./images/handpan fit clear background.png" alt="Ayasa Handpan Kurd9" style="width:5%;height:5%;">
+                    <h3>Play Game</h3>
+                </a>
+            </li>
+        </ul>
     </nav>
     <section id="title">
     <header>
         <div class="row">
-            <h1>Handpan Sample Kit</h1>
+            <h1>Play Me!</h1>
         </div>
     </header>
     </section>
     <section id="game">
 
-        
         <!-- SVG code below adapted from Marco Andrea Zappani's HaganeNote:
         https://www.haganenote.com/vst/handpan-virtual-instrument.html -->
         <div id="handpanSVG">
@@ -71,11 +76,13 @@
 
         
             <!-- <section class='how-to-play'> -->
+                <h2>Keyboard Map For Notes</h2>
+                <img src="images/handpanKeyGuide.png" alt="Handpan keypress guide" width="50%" height="50%">
                 <div class="row">
-                    <h2>Play Me!</h2>
-                    <h2>Keyboard Map For Notes</h2>
-                    <img src="images/handpanKeyGuide.png" alt="Handpan keypress guide" width="50%" height="50%">
-                    <button class='melody' type="button" onclick="window.location.href='scrap.html'">Learn a Melody!</button>
+                    
+                    <!-- Future learn a melody option -->
+                    <button class='melody' type="button" onclick="window.location.href='scrap.html'">Learn a Melody!</button> 
+                    <button class='melody' type="button" onclick=" window.open('https://www.youtube.com/watch?v=UkUgsFAHHas&t=3s')" target="_blank">Live Demo!</button>
                 </div>
             </section>
     <!-- </section> -->
