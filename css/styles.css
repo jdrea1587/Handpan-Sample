@@ -3,6 +3,12 @@ body {
     text-align:justify;
     font-family: Brush Script MT;
 }
+nav{
+    margin: 2px;
+    padding: 2px;
+    display: inline;
+    
+}
 
 h1 {
     font-size: xx-large;
