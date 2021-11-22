@@ -73,7 +73,7 @@ clickNote6.addEventListener("click", playNote6)
 clickNote7.addEventListener("click", playNote7)
 clickNote8.addEventListener("click", playNote8)
 
-//Reset fill color after click or keypress listener
+//Reset fill color after click or keypress listener`1
 notesArray[0].addEventListener("ended", function(){
     notesArray[0].currentTime = 0;
     clickDing.style.fill = "grey"
@@ -165,9 +165,11 @@ document.addEventListener("keypress", function onEvent(event) {
 
 
 
-// Game Start button plays a melody or any key 'keyup' event
 
 //if user plays same melody then is able to move to next melody
+
+//check to see if user plays
+
 //else if user does not perform melody than melody is repeated.
 
 //Create melody
@@ -176,14 +178,11 @@ let randomMelody = () => {
     let randomNumber = Math.floor(Math.random()*9)
     console.log(randomNumber)
     newRandomMelody.push(randomNumber)
-    // newMelody[indexOfRandomNumber]    
-    // let indexOfRandomNumber = newMelody.length - 1
     
-    // playMelody()
     playRandomMelody()
 
     nextNote()
-    userInput=[] 
+    //userInput=[] 
    };
 
    console.log(newRandomMelody)
@@ -282,9 +281,9 @@ let countMelody = () => {
 }
 
 //adds note to melody
-let nextNote = () => {
-    countMelody++
-}
+// let nextNote = () => {
+//     countMelody++
+// }
 
 // convert user input into a number and push into new array
 document.addEventListener("keypress", function onEvent(event) {
