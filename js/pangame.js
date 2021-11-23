@@ -129,90 +129,27 @@ notesArray[8].addEventListener("ended", function(){
 document.addEventListener("keypress", function onEvent(event) {
     let userArray = 0
 
-    if (event.key === "p"){
-        // melodyCheck()    
+    if (event.key === "p"){ 
         userInput = []
-    }
+    } else {
+    
+    let sounds = ["g", "b", "v", "n", "f", "h", "r", "y", "t"]
+    
+    let key = event.key
+    let index = sounds.indexOf(key)
 
-    if (event.key === "g") {
-        playDing();
-        userInput.push(0)
+    playNote(index)
+    userInput.push(index)
+
+    // only check isMatch()
+    // IF userInput is same length as newRandomMelody
+    if (userInput.length === newRandomMelody.length) {
         let result = isMatch(userInput, newRandomMelody)
         console.log(`result: ${result}`)
         console.log(`userInput: ${userInput}`)
         console.log(`newRandomMelody: ${newRandomMelody}`)
-        
-        
+        } 
     }
-    if (event.key === "b") {
-        playNote1();
-        userInput.push(1)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    } 
-    if (event.key === "v") {
-        playNote2();
-        userInput.push(2)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    }
-    if (event.key === "n") {
-        playNote3();
-        userInput.push(3)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    }
-    if (event.key === "f") {
-        playNote4();
-        userInput.push(4)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    }
-    if (event.key === "h") {
-        playNote5();
-        userInput.push(5)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    }
-    if (event.key === "r") {
-        playNote6();
-        userInput.push(6)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    }
-    if (event.key === "y") {
-        playNote7();
-        userInput.push(7)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    }
-    if (event.key === "t") {
-        playNote8();
-        userInput.push(8)
-        let result = isMatch(userInput, newRandomMelody)
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-    }
-    
-    // console.log('keypressed in event', keyPressed)
-    
-    melodyCheck(userArray)
-    
 });
 
 document.addEventListener("keypress", function onEvent(event) {
