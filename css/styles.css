@@ -1,7 +1,7 @@
 body {
     background-color: darkslategray;
     text-align:justify;
-    font-family: Brush Script MT;
+    font-family: 'Permanent Marker', cursive;
 }
 nav{
     margin: 2px;
@@ -61,6 +61,14 @@ section {
 
 g {
     color: black;
+}
+
+.flex-container{
+    display: flex;
+}
+
+.handpanSVG {
+    position:relative;
 }
 
 

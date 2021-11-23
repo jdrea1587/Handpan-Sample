@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <link rel="icon" href="./images/handpan fit clear background.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
     <title>Pan Game Main</title>
 </head>
 <body>
@@ -31,8 +35,8 @@
         <!-- SVG code below adapted from Marco Andrea Zappani's HaganeNote:
         https://www.haganenote.com/vst/handpan-virtual-instrument.html -->
         <!-- dimple class for note accents expansion -->
-    <div id="handpanSVG">
-        <svg id="handpan" height="60%" width="100%" viewBox="0, 0, 100, 100">
+    <div id="handpanSVGElements">
+        <svg id="handpans" height="60%" width="100%" viewBox="0, 0, 100, 100">
             <g id="shellItems">
                 <circle id="shell" cx="50" cy="50" r="49" stroke="grey" stroke-width="1" fill="black"></circle>
             </g>
@@ -77,21 +81,14 @@
 
         <h2>Keyboard Map of Notes</h2>
             <img src="images/handpanKeyGuide.png" alt="Handpan keypress guide" width="50%" height="50%">
-            <div class="row">
+            <div class="links">
                     <!-- Future learn a melody page -->
                 <button class='melody' type="button" onclick="window.location.href='scrap.html'">Learn a Melody!</button> 
                 
                 <button class='melody' type="button" onclick=" window.open('https://www.youtube.com/watch?v=UkUgsFAHHas&t=3s')" target="_blank">Real Handpan Video</button>
             </div>
     </section>
-    <!-- </section> -->
-    <footer>
-        <div class="row">
-            <p></p>
-        </div>
-    </footer>
-
-    
+       
     <script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>

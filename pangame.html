@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <link rel="icon" href="./images/handpan fit clear background.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">   
     <title>Pan Game</title>
 </head>
 <body>
@@ -17,17 +20,20 @@
                     <h3>Main Page</h3>
                 </a>
             </li>   
+            
+            
         </ul>
     </nav>
     <section id="title">
-    <header>
-        <div class="row">
-            <h1 class="simonSays">Play a Melody</h1>
-        </div>
-    </header>
+        <header>
+        </header>
     </section>
-    <section id="game">
+    
+    <div class="flex-container">
         <div id="handpanSVG">
+            <div class="row">
+                <h1 class="simonSays">Press 'P' for Game</h1>
+            </div>
             <svg id="handpan" height="60%" width="100%" viewBox="0, 0, 100, 100">
                 <g id="shellItems">
                     <circle id="shell" cx="50" cy="50" r="49" stroke="grey" stroke-width="1" fill="black"></circle>
@@ -71,17 +77,16 @@
             Sorry, your browser does not support inline SVG.
             </svg>
 
-        
-    </section>
+        </div>
    
     <section class='how-to-play'>
-        <div class="row">
-            <h2>Press 'P' to Build a Melody</h2>
+        <div class="mapNotes">
             <h2>Keyboard Map of Notes</h2>
-            <img src="images/handpanKeyGuide.png" alt="Handpan keypress guide" width="50%" height="50%">
+            <img src="images/handpanKeyGuide.png" alt="Handpan keypress guide" width="48%" height="48%">
         </div>
     </section>
 
+    </div>
     <script type="text/javascript" src="./js/pangame.js"></script>    
 </body>
 </html>

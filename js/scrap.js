@@ -1,8 +1,10 @@
+ 
+
 //Melody create empty array to store sequence
 let newRandomMelody = []
 let userInput = []
 
-//Select html element
+//Select html element by id
 const clickDing = document.getElementById('panNoteDing')
 const clickNote1 = document.getElementById('panNote1')
 const clickNote2 = document.getElementById('panNote2')
@@ -21,12 +23,12 @@ const playDing = () => {
     notesArray[0].currentTime = 0;
     clickDing.style.fill = "blue"
     notesArray[0].play()
-    }
+}
 const playNote1 = () => {
     notesArray[1].currentTime = 0;
     clickNote1.style.fill = "blue"
     notesArray[1].play();
-    }   
+}   
 const playNote2 = () => { 
     notesArray[2].currentTime = 0;
     clickNote2.style.fill = "blue"
@@ -61,364 +63,168 @@ const playNote8 = () => {
     notesArray[8].currentTime = 0;
     clickNote8.style.fill = "blue"
     notesArray[8].play();
-}    
-//Click Event       
-clickDing.addEventListener("click", playDing)
-clickNote1.addEventListener("click", playNote1)
-clickNote2.addEventListener("click", playNote2) 
-clickNote3.addEventListener("click", playNote3)
-clickNote4.addEventListener("click", playNote4)
-clickNote5.addEventListener("click", playNote5)
-clickNote6.addEventListener("click", playNote6)
-clickNote7.addEventListener("click", playNote7)
-clickNote8.addEventListener("click", playNote8)
+} 
 
-//Reset fill color after click or keypress listener`1
 notesArray[0].addEventListener("ended", function(){
     notesArray[0].currentTime = 0;
     clickDing.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[1].addEventListener("ended", function(){
     notesArray[1].currentTime = 0;
     clickNote1.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[2].addEventListener("ended", function(){
     notesArray[2].currentTime = 0;
     clickNote2.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[3].addEventListener("ended", function(){
     notesArray[3].currentTime = 0;
     clickNote3.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[4].addEventListener("ended", function(){
     notesArray[4].currentTime = 0;
     clickNote4.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[5].addEventListener("ended", function(){
     notesArray[5].currentTime = 0;
     clickNote5.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[6].addEventListener("ended", function(){
     notesArray[6].currentTime = 0;
     clickNote6.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[7].addEventListener("ended", function(){
     notesArray[7].currentTime = 0;
     clickNote7.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[8].addEventListener("ended", function(){
     notesArray[8].currentTime = 0;
     clickNote8.style.fill = "grey"
-    console.log("ended");
 });
 
 
 document.addEventListener("keypress", function onEvent(event) {
-    let keyPressed = 0
+    let sounds = ["g", "b", "v", "n", "f", "h", "r", "y", "t"]
     
-    if (event.key === "p"){
-        melodyCheck()
-    }
-    if (event.key === "g") {
-        playDing();
-        userInput.push(0)
-        playNote(0)
-        keyPressed = 0
-    }
-    if (event.key === "b") {
-        playNote1();
-        userInput.push(1)
-        keyPressed = 1
-        console.log('this will be a note panNote1')
-    } 
-    if (event.key === "v") {
-        playNote2();
-        userInput.push(2)
-        keyPressed = 2
-        console.log('this will be Bb note panNote2')
-    }
-    if (event.key === "n") {
-        playNote3();
-        userInput.push(3)
-        keyPressed = 3
-        console.log('this will be C note panNote3')
-    }
-    if (event.key === "f") {
-        playNote4();
-        userInput.push(4)
-        keyPressed = 4
-        console.log('this will be D note panNote4')
-    }
-    if (event.key === "h") {
-        playNote5();
-        userInput.push(5)
-        keyPressed = 5
-        console.log('this will be E note panNote5')
-    }
-    if (event.key === "r") {
-        playNote6();
-        userInput.push(6)
-        keyPressed = 6
-        console.log('this will be F note panNote6')
-    }
-    if (event.key === "y") {
-        playNote7();
-        userInput.push(7)
-        keyPressed = 7
-        console.log('this will be G note panNote7')
-    }
-    if (event.key === "t") {
-        playNote8();
-        userInput.push(8)
-        keyPressed = 8
-        console.log('this will be A note panNote8')
-    }
+    let key = event.key
+    let index = sounds.indexOf(key)
     
-    melodyCheck(keyPressed)
+    playNote(index)
+    userInput.push(index)
     
-});
-
-document.addEventListener("keypress", function onEvent(event) {
-if (event.key === "p") {
-    randomMelody();
-   
-    console.log('generate random melody')
-    }
-})
-
-//Create melody
-//create random number and push to new melody
-let randomMelody = () => {
-    let randomNumber = Math.floor(Math.random()*9)
-    console.log(randomNumber)
-    newRandomMelody.push(randomNumber)
-    
-    playRandomMelody()
-    
-    
-    //nextNote()
-    //userInput=[] 
-};
-
-
-
-console.log(newRandomMelody)
-
-
-const playRandomMelody = () => {
-    for (let i = 0; i < newRandomMelody.length; i++) {
-        // for each iteration
-        // make a pause after it
-        (function (i) {
+    if (userInput.length === newRandomMelody.length) {
+        let result = isMatch(userInput, newRandomMelody)
+        
+        if (result === true) {
             setTimeout(
                 function () {
-                    playNote(newRandomMelody[i])
-                    console.log("did we get here?")
-                }, 1000 * i);
-            })(i);
-        };
-        melodyCheck(newRandomMelody)
+                    userInput = []
+                    goToNextRound()
+                }, 2000);
+            } else {
+                restartGame()
+                alert('Game Over, press \'P\' to try again')
+            }
+        }
+    });
+    
+    const goToNextRound = () => {
+        randomMelody()
     }
     
-
-    //if user plays same melody then is able to move to next melody
-    
-    //check to see if user plays
-    
-    //else if user does not perform melody than melody is repeated.
-
-
-//show melody order
-const playNote = (e) => {
-    switch (e) {
-        case 0:
-            playDing()
-            setTimeout(
-                function() { 
-                    console.log('playDing called') 
-                    }, 1500)
-            break;
-        case 1:
-            playNote1()
-            setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
-                    },1500)
-            break;
-        case 2:
-            playNote2()
-            setTimeout(
-                function() { 
-                    console.log('playNote2 called') 
-                    },1500)
-            break;
-        case 3:
-            playNote3()
-            setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
-                    },1500)
-            break; 
-        case 4:
-            playNote4()
-            setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
-                    },1500)
-            break;
-        case 5:
-            playNote5()
-            setTimeout(
-                function() { 
-                    console.log('playNote1 called')
-                    },1500)
-            break;
-        case 6:
-            playNote6()
-            setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
-                    },1500)
-            break;
-        case 7:
-            playNote7()
-            setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
-                    },1500)
-            break;
-        case 8:
-            playNote8()
-            setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
-                    },1500)
-            break;
+    const restartGame = () => {
+        userInput = []
+        newRandomMelody = []
     }
-}
-
-
-
-//melodies correct
-// let countMelody = () => {
-
-// }
-
-//adds note to melody
-// let nextNote = () => {
-//     countMelody++
-// }
-
-// convert user input into a number and push into new array
-// document.addEventListener("keypress", function onEvent(event) {
-//     let keyPressed = 0
-//     console.log('userKeyed:', keyPressed)
-//     switch (keyPressed) {
-//         case "g":
-//         userInput.push(0)
-//         playNote(0)
-//         keyPressed = 0
-//         break;
-
-//         case "b":
-//         userInput.push(1)
-//         playNote(1)
-//         keyPressed = 1
-//         break;
-
-//         case "v":
-//         userInput.push(2)
-//         playNote(2)
-//         keyPressed = 2
-//         break;
-
-//         case "n":
-//         userInput.push(3)
-//         playNote(3)
-//         keyPressed = 3
-//         break;
-
-//         case "f":
-//         userInput.push(4)
-//         playNote(4)
-//         keyPressed = 4
-//         break;
-
-//         case "h":
-//         userInput.push(5)
-//         playNote(5)
-//         keyPressed = 5
-//         break;
-
-//         case "r":
-//         userInput.push(6)
-//         playNote(6)
-//         keyPressed = 6
-//         break;
-
-//         case "y":
-//         userInput.push(7)
-//         playNote(7)
-//         keyPressed = 7
-//         break;
-
-//         case "t":
-//         userInput.push(8)
-//         playNote(8)
-//         keyPressed = 8
-//         break;
-//     }
-//     melodyCheck(keyPressed)
-
-// })
-
-
-
-
-//this function will trigger every time a key is pressed
-// First check if !notesArray[arrayIndex] = newRandomMelod[currentNote]
-// Send an alert and reset game!
-
-//current index in newRandomMelody
-let currentNoteForRepeatBack = 0
-
-//newRandomMelody = [1, 4, 6, 7]
-
-
-
-// function equals(a, b) {
-//     a.length === b.length &&
-//     a.every((v, i) => v === b[i]);
-// }
-
-
-const melodyCheck = (playedNote, newRandomMelody) => {
-    console.log('played note', playedNote)
-    console.log('in melodycheck', newRandomMelody)
     
-    if (playedNote !== newRandomMelody) {
-        tryAgain()
-    }
-    if (playedNote < newRandomMelody.length) {
-        newRandomMelody++
-    } else {
-        currentNoteForRepeatBack = 0
-        //add a new note
-        //triggers press play
-    }     
-}
-
-
-//if userInput does not match newMelody array
-const tryAgain = () => { 
+    document.addEventListener("keypress", function onEvent(event) {
+        if (event.key === "p") {
+            userInput = []
+            randomMelody();
+        }
+    })
     
-    document.getElementsByClassName("simonSays").innerHTML = "Try Again? Press 'P'";
-}
+    //Create random number and push to new melody
+    let randomMelody = () => {
+        let randomNumber = Math.floor(Math.random()*9)
+        newRandomMelody.push(randomNumber)
+        playRandomMelody()  
+    };
+    
+    //Create melody
+    const playRandomMelody = () => {
+        for (let i = 0; i < newRandomMelody.length; i++) {
+            // for each iteration
+            // make a pause after it
+            (function (i) {
+                setTimeout(
+                    function () {
+                        playNote(newRandomMelody[i])
+                    }, 2000 * i);
+                })(i);
+            };
+        }
+        
+        const playNote = (e) => { 
+            switch (e) {
+                case 0:
+                    playDing()
+                    setTimeout(
+                        function() {  
+                            }, 1500)
+                    break;
+                case 1:
+                    playNote1()
+                    setTimeout(
+                        function() { 
+                            },1500)
+                    break;
+                case 2:
+                    playNote2()
+                    setTimeout(
+                        function() { 
+                            },1500)
+                    break;
+                case 3:
+                    playNote3()
+                    setTimeout(
+                        function() { 
+                            },1500)
+                    break; 
+                case 4:
+                    playNote4()
+                    setTimeout(
+                        function() {  
+                            },1500)
+                    break;
+                case 5:
+                    playNote5()
+                    setTimeout(
+                        function() { 
+                            },1500)
+                    break;
+                case 6:
+                    playNote6()
+                    setTimeout(
+                        function() {  
+                            },1500)
+                    break;
+                case 7:
+                    playNote7()
+                    setTimeout(
+                        function() {  
+                            },1500)
+                    break;
+                case 8:
+                    playNote8()
+                    setTimeout(
+                        function() {  
+                            },1500)
+                    break;
+            }
+        }
+                                                                                
+        function isMatch(a, b) {
+            return a.toString() === b.toString()
+        }                                                                            
+                                                                                

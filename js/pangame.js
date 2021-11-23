@@ -126,7 +126,6 @@ document.addEventListener("keypress", function onEvent(event) {
     }
 });
 
-
 const goToNextRound = () => {
     randomMelody()
 }
@@ -143,15 +142,14 @@ if (event.key === "p") {
     }
 })
 
-//Create melody
-//create random number and push to new melody
+//Create random number and push to new melody
 let randomMelody = () => {
     let randomNumber = Math.floor(Math.random()*9)
     newRandomMelody.push(randomNumber)
-        playRandomMelody()  
+    playRandomMelody()  
 };
 
-
+//Create melody
 const playRandomMelody = () => {
     for (let i = 0; i < newRandomMelody.length; i++) {
         // for each iteration
