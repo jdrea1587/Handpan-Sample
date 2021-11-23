@@ -63,63 +63,41 @@ const playNote8 = () => {
     notesArray[8].play();
 } 
 
-//Click Event       
-// clickDing.addEventListener("click", playDing)
-// clickNote1.addEventListener("click", playNote1)
-// clickNote2.addEventListener("click", playNote2) 
-// clickNote3.addEventListener("click", playNote3)
-// clickNote4.addEventListener("click", playNote4)
-// clickNote5.addEventListener("click", playNote5)
-// clickNote6.addEventListener("click", playNote6)
-// clickNote7.addEventListener("click", playNote7)
-// clickNote8.addEventListener("click", playNote8)
-
-
-//Reset fill color after click or keypress listener
 notesArray[0].addEventListener("ended", function(){
     notesArray[0].currentTime = 0;
     clickDing.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[1].addEventListener("ended", function(){
     notesArray[1].currentTime = 0;
     clickNote1.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[2].addEventListener("ended", function(){
     notesArray[2].currentTime = 0;
     clickNote2.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[3].addEventListener("ended", function(){
     notesArray[3].currentTime = 0;
     clickNote3.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[4].addEventListener("ended", function(){
     notesArray[4].currentTime = 0;
     clickNote4.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[5].addEventListener("ended", function(){
     notesArray[5].currentTime = 0;
     clickNote5.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[6].addEventListener("ended", function(){
     notesArray[6].currentTime = 0;
     clickNote6.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[7].addEventListener("ended", function(){
     notesArray[7].currentTime = 0;
     clickNote7.style.fill = "grey"
-    console.log("ended");
 });
 notesArray[8].addEventListener("ended", function(){
     notesArray[8].currentTime = 0;
     clickNote8.style.fill = "grey"
-    console.log("ended");
 });
 
 
@@ -134,45 +112,34 @@ document.addEventListener("keypress", function onEvent(event) {
 
     if (userInput.length === newRandomMelody.length) {
         let result = isMatch(userInput, newRandomMelody)
-        // debugger;
+       
         if (result === true) {
             setTimeout(
                 function () {
                     userInput = []
                     goToNextRound()
-                    console.log("setTimeout before next round")
                 }, 2000);
         } else {
             restartGame()
             alert('Game Over, press \'P\' to try again')
         }
-        console.log(`result: ${result}`)
-        console.log(`userInput: ${userInput}`)
-        console.log(`newRandomMelody: ${newRandomMelody}`)
-            // randomMelody()
-        }
-
+    }
 });
 
 
 const goToNextRound = () => {
     randomMelody()
-    console.log('in next round')
-    // debugger;
 }
 
 const restartGame = () => {
     userInput = []
     newRandomMelody = []
-    // debugger;
 }
 
 document.addEventListener("keypress", function onEvent(event) {
 if (event.key === "p") {
     userInput = []
     randomMelody();
-   
-    console.log('generate random melody')
     }
 })
 
@@ -180,14 +147,10 @@ if (event.key === "p") {
 //create random number and push to new melody
 let randomMelody = () => {
     let randomNumber = Math.floor(Math.random()*9)
-    console.log(randomNumber)
     newRandomMelody.push(randomNumber)
-    
-    playRandomMelody()
-   
+        playRandomMelody()  
 };
 
-console.log(newRandomMelody)
 
 const playRandomMelody = () => {
     for (let i = 0; i < newRandomMelody.length; i++) {
@@ -197,78 +160,65 @@ const playRandomMelody = () => {
             setTimeout(
                 function () {
                     playNote(newRandomMelody[i])
-                    console.log("did we get here?")
-                    console.log(newRandomMelody)
                 }, 2000 * i);
             })(i);
         };
     }
     
-//show melody order
 const playNote = (e) => { 
-    //do the same refactor i did
     switch (e) {
         case 0:
             playDing()
             setTimeout(
-                function() { 
-                    console.log('playDing called') 
+                function() {  
                     }, 1500)
             break;
         case 1:
             playNote1()
             setTimeout(
                 function() { 
-                    console.log('playNote1 called') 
                     },1500)
             break;
         case 2:
             playNote2()
             setTimeout(
                 function() { 
-                    console.log('playNote2 called') 
                     },1500)
             break;
         case 3:
             playNote3()
             setTimeout(
                 function() { 
-                    console.log('playNote1 called') 
                     },1500)
             break; 
         case 4:
             playNote4()
             setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
+                function() {  
                     },1500)
             break;
         case 5:
             playNote5()
             setTimeout(
                 function() { 
-                    console.log('playNote1 called')
                     },1500)
             break;
         case 6:
             playNote6()
             setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
+                function() {  
                     },1500)
             break;
         case 7:
             playNote7()
             setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
+                function() {  
                     },1500)
             break;
         case 8:
             playNote8()
             setTimeout(
-                function() { 
-                    console.log('playNote1 called') 
+                function() {  
                     },1500)
             break;
     }

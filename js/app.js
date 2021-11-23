@@ -163,4 +163,3 @@ document.addEventListener("keypress", function onEvent(event) {
     }
 });
 
-//create "learn a molody" button to take user to new page.
