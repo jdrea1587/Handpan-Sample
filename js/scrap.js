@@ -102,6 +102,30 @@ notesArray[8].addEventListener("ended", function(){
     clickNote8.style.fill = "grey"
 });
 
+document.addEventListener("click", function onEvent(event) {
+    let sounds = ["g", "b", "v", "n", "f", "h", "r", "y", "t"]
+    
+    let key = event.click
+    let index = sounds.indexOf(key)
+    
+    playNote(index)
+    userInput.push(index)
+    
+    if (userInput.length === newRandomMelody.length) {
+        let result = isMatch(userInput, newRandomMelody)
+        
+        if (result === true) {
+            setTimeout(
+                function () {
+                    userInput = []
+                    goToNextRound()
+                }, 2000);
+            } else {
+                restartGame()
+                alert('Game Over, press \'P\' to try again')
+            }
+        }
+})
 
 document.addEventListener("keypress", function onEvent(event) {
     let sounds = ["g", "b", "v", "n", "f", "h", "r", "y", "t"]

@@ -100,7 +100,6 @@ notesArray[8].addEventListener("ended", function(){
     clickNote8.style.fill = "grey"
 });
 
-
 document.addEventListener("keypress", function onEvent(event) {
     let sounds = ["g", "b", "v", "n", "f", "h", "r", "y", "t"]
     
@@ -142,7 +141,7 @@ if (event.key === "p") {
     }
 })
 
-//Create random number and push to new melody
+//Create random number and push to newRandomMelody
 let randomMelody = () => {
     let randomNumber = Math.floor(Math.random()*9)
     newRandomMelody.push(randomNumber)
@@ -152,8 +151,6 @@ let randomMelody = () => {
 //Create melody
 const playRandomMelody = () => {
     for (let i = 0; i < newRandomMelody.length; i++) {
-        // for each iteration
-        // make a pause after it
         (function (i) {
             setTimeout(
                 function () {
@@ -222,6 +219,7 @@ const playNote = (e) => {
     }
 }
 
+//Accepts two arrays compare their truthiness as strings
 function isMatch(a, b) {
    return a.toString() === b.toString()
 }

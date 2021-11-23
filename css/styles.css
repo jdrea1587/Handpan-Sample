@@ -72,7 +72,7 @@ g {
 }
 
 
-g:hover, circle:hover, ellipse:hover {
+circle:hover, ellipse:hover {
     fill: blue;
   }
 
