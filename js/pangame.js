@@ -2,7 +2,6 @@
 let newRandomMelody = []
 let userInput = []
 
-
 //Select html element by id
 const clickDing = document.getElementById('panNoteDing')
 const clickNote1 = document.getElementById('panNote1')
@@ -14,10 +13,8 @@ const clickNote6 = document.getElementById('panNote6')
 const clickNote7 = document.getElementById('panNote7')
 const clickNote8 = document.getElementById('panNote8')
 
-
 //Select audio file => Convert to an array
 const notesArray = [new Audio('./mp3/panDingD.mp3'), new Audio('./mp3/panNoteA.mp3'), new Audio('./mp3/panNoteB.mp3'), new Audio('./mp3/panNoteC.mp3'), new Audio('./mp3/panNoteD.mp3'), new Audio('./mp3/panNoteE.mp3'), new Audio('./mp3/panNoteF.mp3'), new Audio('./mp3/panNoteG.mp3'), new Audio('./mp3/panNoteAa.mp3')]
-
 
 //Play sound
 const playDing = () => {
@@ -141,8 +138,6 @@ document.addEventListener("keypress", function onEvent(event) {
     playNote(index)
     userInput.push(index)
 
-    // only check isMatch()
-    // IF userInput is same length as newRandomMelody
     if (userInput.length === newRandomMelody.length) {
         let result = isMatch(userInput, newRandomMelody)
         console.log(`result: ${result}`)
@@ -169,8 +164,6 @@ let randomMelody = () => {
     
     playRandomMelody()
    
-    //nextNote()
-    //userInput=[] 
 };
 
 console.log(newRandomMelody)
@@ -190,14 +183,6 @@ const playRandomMelody = () => {
         };
     }
     
-
-    //if user plays same melody then is able to move to next melody
-    
-    //check to see if user plays
-    
-    //else if user does not perform melody than melody is repeated.
-
-
 //show melody order
 const playNote = (e) => { 
     switch (e) {
@@ -267,37 +252,6 @@ const playNote = (e) => {
     }
 }
 
-function melodyChecker(userArray, computerArray) {
-    let doMelodyArraysMatch //created variable
-    // doMelodyArraysMatch = true //value assigned to variable
-    // doMelodyArraysMatch = false //value assigned to variable
-    doMelodyArraysMatch = isMatch(userArray, computerArray)
-    // isMatch(userArray, computerArray)
-    return doMelodyArraysMatch 
-}
-//================================================
-//================================================
-// a and b are arrays
 function isMatch(a, b) {
    return a.toString() === b.toString()
-}
-
-const arrayA = [1, 2, 3];
-const arrayB = [1, 2, 3];
-
-
-
-const melodyCheck = (userArray, newRandomMelody) => {
-    let doMelodyArraysMatch // true or false
-    
-    // doMelodyArraysMatch = isMatch(a, b); // true
-    // console.log(`doMelodyArraysMatch: ${doMelodyArraysMatch}`)
-
-   
-}
-
-
-//if userInput does not match newMelody array
-const tryAgain = () => { 
-    document.getElementsByClassName("simonSays").innerHTML = "Try Again? Press 'P'";
 }

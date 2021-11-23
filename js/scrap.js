@@ -122,47 +122,77 @@ notesArray[8].addEventListener("ended", function(){
 
 
 document.addEventListener("keypress", function onEvent(event) {
+    let keyPressed = 0
+    
+    if (event.key === "p"){
+        melodyCheck()
+    }
     if (event.key === "g") {
         playDing();
+        userInput.push(0)
+        playNote(0)
+        keyPressed = 0
     }
     if (event.key === "b") {
         playNote1();
+        userInput.push(1)
+        keyPressed = 1
         console.log('this will be a note panNote1')
     } 
     if (event.key === "v") {
         playNote2();
+        userInput.push(2)
+        keyPressed = 2
         console.log('this will be Bb note panNote2')
     }
     if (event.key === "n") {
         playNote3();
+        userInput.push(3)
+        keyPressed = 3
         console.log('this will be C note panNote3')
     }
     if (event.key === "f") {
         playNote4();
+        userInput.push(4)
+        keyPressed = 4
         console.log('this will be D note panNote4')
     }
     if (event.key === "h") {
         playNote5();
+        userInput.push(5)
+        keyPressed = 5
         console.log('this will be E note panNote5')
     }
     if (event.key === "r") {
         playNote6();
+        userInput.push(6)
+        keyPressed = 6
         console.log('this will be F note panNote6')
     }
     if (event.key === "y") {
         playNote7();
+        userInput.push(7)
+        keyPressed = 7
         console.log('this will be G note panNote7')
     }
     if (event.key === "t") {
         playNote8();
+        userInput.push(8)
+        keyPressed = 8
         console.log('this will be A note panNote8')
     }
-    if (event.key === "p") {
-        randomMelody();
-        console.log('generate random melody')
-    }
+    
+    melodyCheck(keyPressed)
+    
 });
 
+document.addEventListener("keypress", function onEvent(event) {
+if (event.key === "p") {
+    randomMelody();
+   
+    console.log('generate random melody')
+    }
+})
 
 //Create melody
 //create random number and push to new melody
@@ -172,7 +202,8 @@ let randomMelody = () => {
     newRandomMelody.push(randomNumber)
     
     playRandomMelody()
-   
+    
+    
     //nextNote()
     //userInput=[] 
 };
@@ -194,6 +225,7 @@ const playRandomMelody = () => {
                 }, 1000 * i);
             })(i);
         };
+        melodyCheck(newRandomMelody)
     }
     
 
@@ -276,9 +308,9 @@ const playNote = (e) => {
 
 
 //melodies correct
-let countMelody = () => {
+// let countMelody = () => {
 
-}
+// }
 
 //adds note to melody
 // let nextNote = () => {
@@ -286,67 +318,67 @@ let countMelody = () => {
 // }
 
 // convert user input into a number and push into new array
-document.addEventListener("keypress", function onEvent(event) {
-    let keyPressed = null
-    console.log('userKeyed:', keyPressed)
-    switch (keyPressed) {
-        case "g":
-        userInput.push(0)
-        playNote(0)
-        keyPressed = 0
-        break;
+// document.addEventListener("keypress", function onEvent(event) {
+//     let keyPressed = 0
+//     console.log('userKeyed:', keyPressed)
+//     switch (keyPressed) {
+//         case "g":
+//         userInput.push(0)
+//         playNote(0)
+//         keyPressed = 0
+//         break;
 
-        case "b":
-        userInput.push(1)
-        playNote(1)
-        keyPressed = 1
-        break;
+//         case "b":
+//         userInput.push(1)
+//         playNote(1)
+//         keyPressed = 1
+//         break;
 
-        case "v":
-        userInput.push(2)
-        playNote(2)
-        keyPressed = 2
-        break;
+//         case "v":
+//         userInput.push(2)
+//         playNote(2)
+//         keyPressed = 2
+//         break;
 
-        case "n":
-        userInput.push(3)
-        playNote(3)
-        keyPressed = 3
-        break;
+//         case "n":
+//         userInput.push(3)
+//         playNote(3)
+//         keyPressed = 3
+//         break;
 
-        case "f":
-        userInput.push(4)
-        playNote(4)
-        keyPressed = 4
-        break;
+//         case "f":
+//         userInput.push(4)
+//         playNote(4)
+//         keyPressed = 4
+//         break;
 
-        case "h":
-        userInput.push(5)
-        playNote(5)
-        keyPressed = 5
-        break;
+//         case "h":
+//         userInput.push(5)
+//         playNote(5)
+//         keyPressed = 5
+//         break;
 
-        case "r":
-        userInput.push(6)
-        playNote(6)
-        keyPressed = 6
-        break;
+//         case "r":
+//         userInput.push(6)
+//         playNote(6)
+//         keyPressed = 6
+//         break;
 
-        case "y":
-        userInput.push(7)
-        playNote(7)
-        keyPressed = 7
-        break;
+//         case "y":
+//         userInput.push(7)
+//         playNote(7)
+//         keyPressed = 7
+//         break;
 
-        case "t":
-        userInput.push(8)
-        playNote(8)
-        keyPressed = 8
-        break;
-    }
-    melodyCheck(keyPressed)
+//         case "t":
+//         userInput.push(8)
+//         playNote(8)
+//         keyPressed = 8
+//         break;
+//     }
+//     melodyCheck(keyPressed)
 
-})
+// })
 
 
 
@@ -360,13 +392,23 @@ let currentNoteForRepeatBack = 0
 
 //newRandomMelody = [1, 4, 6, 7]
 
-const melodyCheck = (playedNote) => {
+
+
+// function equals(a, b) {
+//     a.length === b.length &&
+//     a.every((v, i) => v === b[i]);
+// }
+
+
+const melodyCheck = (playedNote, newRandomMelody) => {
     console.log('played note', playedNote)
-    if (playedNote !== newRandomMelody[currentNoteForRepeatBack]) {
+    console.log('in melodycheck', newRandomMelody)
+    
+    if (playedNote !== newRandomMelody) {
         tryAgain()
     }
     if (playedNote < newRandomMelody.length) {
-        playedNote++
+        newRandomMelody++
     } else {
         currentNoteForRepeatBack = 0
         //add a new note
@@ -377,5 +419,6 @@ const melodyCheck = (playedNote) => {
 
 //if userInput does not match newMelody array
 const tryAgain = () => { 
+    
     document.getElementsByClassName("simonSays").innerHTML = "Try Again? Press 'P'";
 }
