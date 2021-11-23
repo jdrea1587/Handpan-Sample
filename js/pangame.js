@@ -64,15 +64,15 @@ const playNote8 = () => {
 } 
 
 //Click Event       
-clickDing.addEventListener("click", playDing)
-clickNote1.addEventListener("click", playNote1)
-clickNote2.addEventListener("click", playNote2) 
-clickNote3.addEventListener("click", playNote3)
-clickNote4.addEventListener("click", playNote4)
-clickNote5.addEventListener("click", playNote5)
-clickNote6.addEventListener("click", playNote6)
-clickNote7.addEventListener("click", playNote7)
-clickNote8.addEventListener("click", playNote8)
+// clickDing.addEventListener("click", playDing)
+// clickNote1.addEventListener("click", playNote1)
+// clickNote2.addEventListener("click", playNote2) 
+// clickNote3.addEventListener("click", playNote3)
+// clickNote4.addEventListener("click", playNote4)
+// clickNote5.addEventListener("click", playNote5)
+// clickNote6.addEventListener("click", playNote6)
+// clickNote7.addEventListener("click", playNote7)
+// clickNote8.addEventListener("click", playNote8)
 
 
 //Reset fill color after click or keypress listener
@@ -124,12 +124,6 @@ notesArray[8].addEventListener("ended", function(){
 
 
 document.addEventListener("keypress", function onEvent(event) {
-    let userArray = 0
-
-    if (event.key === "p"){ 
-        userInput = []
-    } else {
-    
     let sounds = ["g", "b", "v", "n", "f", "h", "r", "y", "t"]
     
     let key = event.key
@@ -140,15 +134,42 @@ document.addEventListener("keypress", function onEvent(event) {
 
     if (userInput.length === newRandomMelody.length) {
         let result = isMatch(userInput, newRandomMelody)
+        // debugger;
+        if (result === true) {
+            setTimeout(
+                function () {
+                    userInput = []
+                    goToNextRound()
+                    console.log("setTimeout before next round")
+                }, 2000);
+        } else {
+            restartGame()
+            alert('Game Over, press \'P\' to try again')
+        }
         console.log(`result: ${result}`)
         console.log(`userInput: ${userInput}`)
         console.log(`newRandomMelody: ${newRandomMelody}`)
-        } 
-    }
+            // randomMelody()
+        }
+
 });
+
+
+const goToNextRound = () => {
+    randomMelody()
+    console.log('in next round')
+    // debugger;
+}
+
+const restartGame = () => {
+    userInput = []
+    newRandomMelody = []
+    // debugger;
+}
 
 document.addEventListener("keypress", function onEvent(event) {
 if (event.key === "p") {
+    userInput = []
     randomMelody();
    
     console.log('generate random melody')
@@ -178,13 +199,14 @@ const playRandomMelody = () => {
                     playNote(newRandomMelody[i])
                     console.log("did we get here?")
                     console.log(newRandomMelody)
-                }, 1000 * i);
+                }, 2000 * i);
             })(i);
         };
     }
     
 //show melody order
 const playNote = (e) => { 
+    //do the same refactor i did
     switch (e) {
         case 0:
             playDing()
